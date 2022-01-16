@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   dockerapp:
     build: .
@@ -6,5 +6,13 @@ services:
       - "5000:5000"
     depends_on:
       - redis
+    networks:
+      - my_net
   redis:
     image: redis:3.2.0
+    networks:
+      - my_net
+
+networks:
+  my_net:
+    driver: bridge
