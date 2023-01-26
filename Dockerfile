@@ -1,4 +1,4 @@
-FROM python:3.5
+FROM python:3.10
 RUN pip install Flask==0.11.1 redis==2.10.5
 RUN useradd -ms /bin/bash admin
 USER admin
